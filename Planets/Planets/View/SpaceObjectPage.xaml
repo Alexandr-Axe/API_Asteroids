@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Planets.View.SpaceObjectPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Zadejte název vesmírného tělesa" HorizontalOptions="CenterAndExpand" Text="{Binding CurrentName}"/>
+            <Entry Placeholder="Zadejte jeho složení" HorizontalOptions="CenterAndExpand" Text="{Binding Material}"/>
+            <Entry Placeholder="Zadejte velikost tělesa" HorizontalOptions="CenterAndExpand" Text="{Binding Size}"/>
+            <Button Text="Uložit informace" VerticalOptions="End" Clicked="Save_Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

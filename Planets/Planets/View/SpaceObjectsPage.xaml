@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Planets.View.SpaceObjectsPage">
+    
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding AllObjects}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="true" Margin="5, 10">
+
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal">
+                <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="Seznam planet a asteroidů" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame>
+            </StackLayout>
+        </ListView.Header>
+        
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding CurrentName}" TextColor="Black"/>
+                        <Label Text="{Binding Material}" TextColor="Black"/>
+                        <Label Text="{Binding Size}" TextColor="Black"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
