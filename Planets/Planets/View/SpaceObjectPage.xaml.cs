@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Planets.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -27,15 +29,15 @@ namespace Planets.View
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CurrentName"));
             }
         }
-        private string _Material;
+        private double _Velocity;
 
-        public string Material
+        public double Velocity
         {
-            get { return _Material; }
-            set 
+            get { return _Velocity; }
+            set
             {
-                _Material = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Material"));
+                _Velocity = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Velocity"));
             }
         }
         private double _Size;
@@ -51,13 +53,13 @@ namespace Planets.View
         }
         public SpaceObject ToSpaceObject() 
         {
-            SpaceObject SO = new SpaceObject { CurrentName = this.CurrentName, Material = this.Material, Size = this.Size };
+            SpaceObject SO = new SpaceObject { CurrentName = this.CurrentName, Velocity = this.Velocity, Size = this.Size};
             return SO;
         }
         public PageViewModel(SpaceObject SO) 
         {
             CurrentName = SO.CurrentName;
-            Material = SO.Material;
+            Velocity = SO.Velocity;
             Size = SO.Size;
         }
 

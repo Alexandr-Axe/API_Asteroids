@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder="Zadejte název vesmírného tělesa" HorizontalOptions="CenterAndExpand" Text="{Binding CurrentName}"/>
-            <Entry Placeholder="Zadejte jeho složení" HorizontalOptions="CenterAndExpand" Text="{Binding Material}"/>
+            <Entry Placeholder="Zadejte rychlost tělesa" HorizontalOptions="CenterAndExpand" Text="{Binding Velocity}"/>
             <Entry Placeholder="Zadejte velikost tělesa" HorizontalOptions="CenterAndExpand" Text="{Binding Size}"/>
             <Button Text="Uložit informace" VerticalOptions="End" Clicked="Save_Button_Clicked"/>
         </StackLayout>

@@ -14,6 +14,7 @@
                 <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                     <Label Text="Seznam planet a asteroidů" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                 </Frame>
+                <Button x:Name="btnRefresh" Text="REFRESH" Clicked="Button_Clicked"/>
             </StackLayout>
         </ListView.Header>
         

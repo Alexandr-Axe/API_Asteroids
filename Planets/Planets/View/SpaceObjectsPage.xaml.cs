@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,6 +33,12 @@ namespace Planets.View
             await Application.Current.MainPage.Navigation.PushAsync(p);
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+        
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
