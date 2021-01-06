@@ -22,8 +22,9 @@ namespace Planets.Models
         public async Task APIRefresh()
         {
             HttpClient HC = new HttpClient();
-            DateTime DT = DateTime.Now;
-            string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={DT.ToString("yyyy-MM-dd")}&end_date={DT.ToString("yyyy-MM-dd")}_key=hkxsVmmgRja7xcnPNXiTirSSszjd59aJEqEXVCg9";
+            DateTime DT = DateTime.Now.AddDays(-1);
+            DateTime DTb = DT.AddDays(-2);
+            string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={DTb.ToString("yyyy-MM-dd")}&end_date={DT.ToString("yyyy-MM-dd")}_key=hkxsVmmgRja7xcnPNXiTirSSszjd59aJEqEXVCg9";
             //string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=9fE9WVzv1ccw53NHc7Iw29alSpJ65XcljtdvYrrs";
             try
             {
@@ -33,9 +34,9 @@ namespace Planets.Models
                 for (int i = 0; i < 13; i++)
                 {
                     SpaceObject SO = new SpaceObject();
-                    SO.CurrentName = Convert.ToString(JO["near_earth_objects"][DT.ToString("dd-MM-yyyy")][i]["name"]);
-                    SO.Velocity = Convert.ToDouble((JO["near_earth_objects"][DT.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["relative_velocity"]["kilometers_per_hour"]));
-                    SO.Size = Convert.ToDouble((JO["near_earth_objects"][DT.ToString("yyyy-MM-dd")][i]["estimated_diameter"]["kilometers"]["estimated_diameter_max"]));
+                    SO.CurrentName = Convert.ToString(JO["near_earth_objects"][DTb.ToString("dd-MM-yyyy")][i]["name"]);
+                    SO.Velocity = Convert.ToDouble((JO["near_earth_objects"][DTb.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["relative_velocity"]["kilometers_per_hour"]));
+                    SO.Size = Convert.ToDouble((JO["near_earth_objects"][DTb.ToString("yyyy-MM-dd")][i]["estimated_diameter"]["kilometers"]["estimated_diameter_max"]));
                 }
             }
             catch (Exception)
