@@ -34,8 +34,8 @@ namespace Planets.Models
                 {
                     SpaceObject SO = new SpaceObject();
                     SO.CurrentName = Convert.ToString(JO["near_earth_objects"][DT.ToString("dd-MM-yyyy")][i]["name"]);
-                    SO.Velocity = Convert.ToDouble((JO["near_earth_objects"][DT.ToString("dd-MM-yyyy")][i]["velocity"]));
-                    SO.Size = Convert.ToDouble((JO["near_earth_objects"][DT.ToString("dd-MM-yyyy")][i]["estimated_diametr"]));
+                    SO.Velocity = Convert.ToDouble((JO["near_earth_objects"][DT.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["relative_velocity"]["kilometers_per_hour"]));
+                    SO.Size = Convert.ToDouble((JO["near_earth_objects"][DT.ToString("yyyy-MM-dd")][i]["estimated_diameter"]["kilometers"]["estimated_diameter_max"]));
                 }
             }
             catch (Exception)
