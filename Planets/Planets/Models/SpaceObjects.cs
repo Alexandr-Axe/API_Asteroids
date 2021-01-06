@@ -22,8 +22,8 @@ namespace Planets.Models
         public async Task APIRefresh()
         {
             HttpClient HC = new HttpClient();
-            DateTime DT = DateTime.Now.AddDays(-1);
-            DateTime DTb = DT.AddDays(-2);
+            DateTime DT = DateTime.Now;
+            DateTime DTb = DT.AddDays(-1);
             string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={DTb.ToString("yyyy-MM-dd")}&end_date={DT.ToString("yyyy-MM-dd")}&api_key=hkxsVmmgRja7xcnPNXiTirSSszjd59aJEqEXVCg9";
             //string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=9fE9WVzv1ccw53NHc7Iw29alSpJ65XcljtdvYrrs";
             try
