@@ -23,7 +23,7 @@ namespace Planets.Models
         {
             HttpClient HC = new HttpClient();
             DateTime DT = DateTime.Now;
-            string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={DT.ToString("yyyy - MM - dd")}&end_date={DT.ToString("yyyy - MM - dd")}_key=hkxsVmmgRja7xcnPNXiTirSSszjd59aJEqEXVCg9";
+            string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={DT.ToString("yyyy-MM-dd")}&end_date={DT.ToString("yyyy-MM-dd")}_key=hkxsVmmgRja7xcnPNXiTirSSszjd59aJEqEXVCg9";
             //string URL = $"https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=9fE9WVzv1ccw53NHc7Iw29alSpJ65XcljtdvYrrs";
             try
             {
